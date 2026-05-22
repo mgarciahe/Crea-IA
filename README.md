@@ -1,27 +1,18 @@
-CREATE DATABASE orbita_alfa;
+const mysql = require('mysql2');
 
-USE orbita_alfa;
+const conexion = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'orbita_alfa'
+});
 
-CREATE TABLE lotes (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    descripcion VARCHAR(100),
-    puja_actual INT,
-    lider VARCHAR(50)
-);
+conexion.connect((error) => {
+    if(error){
+        console.log('Error de conexión');
+    }else{
+        console.log('Conectado a MySQL');
+    }
+});
 
-CREATE TABLE comerciantes (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(50),
-    saldo INT
-);
-
-INSERT INTO lotes(descripcion, puja_actual, lider)
-VALUES
-('Restos de Fuselaje de Titanio', 500, 'Sin líder'),
-('Nucleo de Hiperpropulsor Dañado', 1200, 'Sin líder');
-
-INSERT INTO comerciantes(nombre, saldo)
-VALUES
-('HanSolo', 2000),
-('Watto', 800),
-('Nebula9', 5000);
+module.exports = conexion;
