@@ -1,36 +1,23 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Órbita Alfa</title>
+body{
+    font-family: Arial;
+    background-color: #f4f4f4;
+}
 
-    <link rel="stylesheet" href="/css/estilos.css">
-</head>
-<body>
+.card{
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: white;
+}
 
-    <div class="card">
+input{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
 
-        <h1>Sistema de Subastas</h1>
-
-        <form action="/subasta" method="POST">
-
-            <input type="number" name="idLote" placeholder="ID del lote" required>
-
-            <input type="text" name="comerciante" placeholder="Comerciante" required>
-
-            <input type="number" name="oferta" placeholder="Oferta" required>
-
-            <button type="submit">Realizar Oferta</button>
-
-        </form>
-
-        <br>
-
-        <a href="/consultar">
-            <button>Consultar Mercado</button>
-        </a>
-
-    </div>
-
-</body>
-</html>
+button{
+    width: 100%;
+    padding: 10px;
+}
